@@ -1,0 +1,40 @@
+<aura:component controller="CarTypeSearch" extends="c:Base_Car" implements="flexipage:availableForRecordHome,force:hasRecordId" >
+    <aura:attribute name = "buttonlabel" type ="String" default="Search"/>
+    <aura:attribute name = "newbutton" type="String" default="New"/>
+    <aura:attribute name = "ShowNew" type = "Boolean" default="false"/>
+    <aura:attribute name = "CarTypes" type ="Car_Type__c" />
+    
+    <aura:handler name = "init" value="{!this}" action = "{!c.doInit}"/>
+    <aura:registerEvent name = "SearchFormSubmit" type="c:CarSearchFormSubmitEvent"/>
+    
+    <!--- <aura:handler name = "render" value="{!this}" action = "{!c.handlerender}"/> -->
+    
+	<lightning:layout horizontalAlign = "centre">
+    <lightning:layoutitem padding = "around-medium">
+        <lightning:select name = "SelectionItem" aura:id="CarTypeList" label="All Types" Variant="label-hidden" value="" onchange="{!c.newValueSelected}">
+            <option value = "" text="All Types" />
+            <aura:iteration items="{!v.CarTypes}" var="CarType">
+                <option value="{!CarType.Id}" text="{!CarType.Name}"/>
+            </aura:iteration>
+        </lightning:select>
+        </lightning:layoutitem>
+        
+        <lightning:layoutitem padding ="around-medium">
+            <lightning:button variant="brand" onclick = "{!c.onSearchclick}" label="{!v.buttonlabel}"/>
+            
+           <!---   <lightning:button variant="neutral" label="Toggle button" onclick="{!c.togglebutton}"/> -->
+            
+            <aura:if isTrue="{!v.ShowNew}">
+            <lightning:button variant="neutral" label="{#v.newbutton}" onclick = "{!c.CreateRecord}" />
+                
+             <!--   <aura:set attribute="else">
+                     new button cannot be added here
+                </aura:set> -->
+            
+            </aura:if>
+            
+            
+        </lightning:layoutitem> 
+        
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,6 @@
+<apex:page sidebar="false" standardController="category__c">
+<h1> List of all product </h1>
+<apex:relatedList list="products__r"/>
+
+
+</apex:page>

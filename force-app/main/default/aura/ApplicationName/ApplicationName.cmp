@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<p class = "paragraph" > i am in lightning </p>
+    <div>
+    <p class = "paragraph2"> second line</p>
+    </div>
+    <div>
+    <p class = "paragraph3"> third line</p>
+    </div>
+    <div>
+    <p class = "paragraph4"> fourth line</p>
+    </div>
+    <br/>
+    <button> HTML BUTTON </button>
+    <lightning:button variant = "Brand" label = "lightning button" />
+</aura:component>

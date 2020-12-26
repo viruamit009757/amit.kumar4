@@ -1,0 +1,28 @@
+<apex:page controller="accountrecordsclass" sidebar="false">
+  <apex:form id="form1" >
+   <apex:pageBlock >
+    <apex:pageBlockTable value="{!acclist}" var="a">
+     <apex:column value="{!a.name}"/>
+      <apex:column value="{!a.type}"/>
+        <apex:column value="{!a.phone}"/>
+    <apex:column >
+<apex:commandlink value="delete" action="{!doDelete}">
+<apex:param name="rId" value="{!a.Id}" assignTo="{!rId}"/>
+</apex:commandlink>
+</apex:column>
+
+    </apex:pageBlockTable>
+   
+  
+   
+   <apex:pageBlockSection collapsible="true" title="search account">
+   <br> add new account </br>
+   <apex:inputText value="{!getAccountfromVF}"/>
+   <apex:actionFunction name="af()" action="{!addAccount}" reRender="form1"/>
+   <apex:inputCheckbox onclick="af()" />
+   
+  </apex:pageBlockSection>
+   </apex:pageBlock>
+  </apex:form>
+  
+</apex:page>

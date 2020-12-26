@@ -1,0 +1,69 @@
+.THIS {
+    /*background-color: #F5F5F5;*/
+}
+
+.THIS .navigation-button{
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000000;
+}
+
+.THIS .navigation-buttons,
+.THIS .navigation-buttons .navigation-button {
+    line-height: inherit !important;
+}
+
+.THIS .navigation-button-next{
+ 	margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.THIS .navigation-button-previous{
+ 	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.THIS .action_button_bar{
+    display: flex;
+    width: 100%;
+    height: 36px;
+    padding: 0 16px;
+    justify-content: space-between;
+}
+
+.THIS .title-rows{
+    padding-top: 5px;
+}
+
+.THIS .inline-block select.select{
+     width: 70px;
+}
+
+.THIS .page-number {
+    padding: 1px 8px;
+}
+
+.THIS .nav-panel {
+    display: flex;
+    padding-top:3px;
+}
+
+.THIS .inline-block{
+    display: flex;
+}
+
+.THIS .navigation-button-disabled{
+    color: #DCDCDC;
+}
+
+@media (max-width: 1024px) {
+    .THIS .inline-block select.select {
+        width: 56px;
+        padding: 4px 15px 6px 8px;
+    }
+    .THIS .backButton svg, .THIS .nextButton svg{
+        display: flex;
+    }
+}

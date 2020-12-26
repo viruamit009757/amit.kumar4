@@ -1,0 +1,17 @@
+<apex:page controller="productsearch">
+ <apex:form >
+   <apex:pageBlock >
+        Type product__c Name Here :<apex:inputText value="{!inputtext}" >
+          <apex:actionSupport action="{!actionSupMethod}" event="onkeyup" reRender="outputText" />
+        </apex:inputtext>
+      </apex:pageBlock>  
+
+    <apex:pageblock >
+      <apex:pageblocktable value="{!accList2}" var="acc2" id="outputText">
+        <apex:column value="{!acc2.product_name__c}"/>
+        <apex:column value="{!acc2.mega_offer_price__c}"/>
+      </apex:pageblocktable>
+    </apex:pageblock>
+ 
+ </apex:form>
+</apex:page>

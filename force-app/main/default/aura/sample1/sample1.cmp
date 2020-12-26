@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<h1> sample component</h1>
+  
+
+    <lightning:recordForm
+        recordId="0012v00002QRSvzAAH"
+        objectApiName="Account"
+        layoutType="Compact"
+        columns="2"/> />
+  
+    <div>
+            <lightning:button label="save" iconName="utility:save" iconPosition="right" variant="brand" />
+
+        </div>
+    
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component controller="accountsClass" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+   <aura:attribute name="currentObjects" type="Object[]"/>
+    <aura:attribute name="accounts" type="Object[]" />
+ 
+    <div  class="slds-grid responsive-grid"> 
+        <table>
+   <aura:iteration items="{!v.currentObjects}" var="accs1" >
+            <tr>  
+                <td> {!accs1.Name}  </td>
+                  <td> {!accs1.Industry}  </td>
+            </tr>
+         </aura:iteration> </table> 
+   </div>
+        <div class="footer slds-p-around--small responsive-pagination">
+            <c:Pagination allObjects="{!v.accounts}" currentObjects="{!v.currentObjects}"/>
+                </div>
+          
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page sidebar="false" standardController="product__c">
+  <apex:form >
+   <apex:pageBlock title="new product">
+    <apex:pageBlockSection columns="1">
+     <apex:inputText value="{!product__c.product_name__c}"/>
+      <apex:inputField value="{!product__c.retail_price__c}"/>
+       <apex:inputField value="{!product__c.our_margin__c}"/>
+         <apex:inputField value="{!product__c.ecomm_Brand__c}"/>
+           <apex:inputField value="{!product__c.category__c}"/>
+            <apex:inputField value="{!product__c.discount__c}"/>
+           
+    </apex:pageBlockSection>
+      <apex:pageBlockButtons >
+        <apex:commandButton title="new" action="{!save}" value="new"/>
+      </apex:pageBlockButtons>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

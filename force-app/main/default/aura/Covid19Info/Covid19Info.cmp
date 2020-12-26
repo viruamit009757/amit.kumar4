@@ -1,0 +1,31 @@
+<aura:component controller="COVIDManager" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+
+<aura:attribute type="list" name="COVID19CountrySummaryList"/>
+
+    <aura:attribute name="mycolumns" type="List"/>   
+
+    <aura:attribute name="showSpinner" type="boolean" default="false"></aura:attribute>
+
+     <lightning:button variant="success" label="Get Covid-19 Information" title="Get Covid-19 Information" onclick="{! c.getcovid19Details }"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+
+        <div class="exampleHolder">
+
+    <lightning:spinner alternativeText="Loading" size="large" />
+
+        </div>
+
+    </aura:if>
+
+    <lightning:datatable data="{! v.COVID19CountrySummaryList }"
+
+                         columns="{! v.mycolumns }"
+
+                         keyField="id"                         
+
+                         hideCheckBoxColumn="true"
+
+        />
+
+</aura:component>

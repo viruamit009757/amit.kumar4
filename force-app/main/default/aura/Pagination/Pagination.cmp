@@ -1,0 +1,45 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+
+    <ltng:require scripts="{!$Resource.IQVIA_js}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="allObjects" type="Object[]" required="true"/>
+    <aura:attribute name="currentObjects" type="Object[]"/>
+    <aura:attribute name="currentPage" type="Integer" default="1" access="public"/>
+    <aura:attribute name="totalPages" type="Integer" default="1" access="public"/>
+    <aura:attribute name="entriesOnPage" type="Integer" default="10" access="public"/>
+    <aura:attribute name="entriesOnPageList" type="Integer[]" default="[10, 25, 50]"/>
+    <aura:attribute name="entriesOnPageOptions" type="Object[]"/>
+    <aura:attribute name="compName" type="String"/>
+
+    <aura:handler name="change" value="{!v.allObjects}" action="{!c.resetPagination}"/>
+    <aura:handler name="change" value="{!v.currentPage}" action="{!c.setPage}"/>
+    <aura:handler name="change" value="{!v.entriesOnPage}" action="{!c.resetPagination}"/>
+
+    <div>
+        <div class="{!join(' ', 'action_button_bar', empty(v.currentObjects) ? 'slds-hide': '')}">
+            <div class="action_button_bar footerButtons">
+                <div class="inline-block responsive-inline-block">
+                    <div class="title-rows slds-p-right_x-small">{!$c.VT_R3_Rows}</div>
+                    <ui:inputSelect class="single responsive-single selectPage" aura:id="inputSelectEntriesOnPageList"
+                                    change="{!c.onChangeEntriesOnPageList}"/>
+         
+                </div>
+                <div class="nav-panel">
+                    <div class="slds-float_right slds-p-left--small">
+                        <lightning:buttonIcon aura:id="BACK" onclick="{!c.previousPage}" size="small"
+                                              iconName="utility:left" alternativeText="{!$c.VTR3_Previous}"
+                                              class="backButton"/>
+                    </div>
+                    <div class="page-number">
+                        {!v.currentPage} {!' ' + $c.VTR3_Of + ' '} {! if(v.totalPages == 0, '1', v.totalPages)}
+                    </div>
+                    <div class="slds-float_right">
+                        <lightning:buttonIcon aura:id="NEXT" onclick="{!c.nextPage}" size="small"
+                                              iconName="utility:right" alternativeText="{!$c.VTR2_Next}"
+                                              class="nextButton"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

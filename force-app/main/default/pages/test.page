@@ -1,0 +1,16 @@
+<apex:page controller="AjaxWildcardController">
+  <apex:form >
+      <apex:pageBlock >
+        Type Account Name Here :<apex:inputText value="{!inputtext}" >
+          <apex:actionSupport action="{!actionSupMethod}" event="onkeyup" reRender="outptText" />
+        </apex:inputtext>
+      </apex:pageBlock>  
+
+    <apex:pageblock >
+      <apex:pageblocktable value="{!accList}" var="acc1" id="outptText">
+        <apex:column value="{!acc1.name}"/>
+        <apex:column value="{!acc1.accountnumber}"/>
+      </apex:pageblocktable>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

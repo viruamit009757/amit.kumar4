@@ -1,0 +1,15 @@
+.THIS.paragraph {
+    color: red; 
+}
+.THIS .paragraph2 {
+    color: green;
+    font-style: bold;
+}
+.THIS .paragraph3 {
+    color: white;
+    font-style: italic;
+}
+.THIS .paragraph4 {
+    color: yellow;
+    font-style: bold;
+}

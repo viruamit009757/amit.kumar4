@@ -1,0 +1,22 @@
+<apex:page SIdebar="false" StandardController="APPLY_FOR_LEAVE__c">
+  <h1>APPLY FOR LEAVE</h1>
+ <apex:form >
+ <apex:pageBlock >
+ <apex:pageBlockSection columns="1">
+ 
+  <apex:inputField value="{!APPLY_FOR_LEAVE__c.start_date__c}"/> 
+  <apex:inputField value="{!APPLY_FOR_LEAVE__c.end_date__c}"/> 
+ 
+ </apex:pageBlockSection>
+ <apex:pageBlockButtons >
+ 
+ <apex:commandButton title="update" action="{!save}" value="update"/>
+ <apex:commandButton title="delete" action="{!delete}" value="delete"/>
+ </apex:pageBlockButtons>
+ 
+ </apex:pageBlock>
+ 
+ 
+ </apex:form>
+
+</apex:page>
